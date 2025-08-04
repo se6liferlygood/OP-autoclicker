@@ -3,7 +3,6 @@
 ProcessSetPriority "High"
 CoordMode("ToolTip","Screen")
 
-SendMode("Event")
 SetKeyDelay(-1,-1)
 SetMouseDelay -1
 
@@ -41,4 +40,5 @@ while true {
     customize()
     MsgBox("alt c to use autoclicker`n`npress somewhere else to hide this MsgBox`n`npress retry if you wanna change the autoclicker settings or cancel to exit",,"RetryCancel")="Cancel"? ExitApp():0
 }
+
 
