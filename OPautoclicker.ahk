@@ -28,8 +28,7 @@ customize() {
     global mt, mode
     try { ;try in case the user types in the wrong data type
         mt := f(Round(InputBox("CPS`n`nclicks per second",,,Round(mt[1]*(1000/mt[2]))).Value))
-        mode2 := MsgBox("current autoclicker mode: " (mode?"HOLD":"TOGGLE") "`n`npress yes to keep current autoclicker mode`n`npress no to change to " (mode?"TOGGLE":"HOLD"),,"YesNo")="Yes"
-        mode := !mode*!mode2+mode*mode2
+        mode := MsgBox("current autoclicker mode: " (mode?"HOLD":"TOGGLE") "`n`npress yes to keep current autoclicker mode`n`npress no to change to " (!mode?"HOLD":"TOGGLE"),,"YesNo")="Yes"? mode:!mode
     }
 }
 
