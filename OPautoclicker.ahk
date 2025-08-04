@@ -3,6 +3,10 @@
 ProcessSetPriority "High"
 CoordMode("ToolTip","Screen")
 
+SendMode("Event")
+SetKeyDelay(-1,-1)
+SetMouseDelay -1
+
 f(CPS,limit := 50) { ;sleep is limitied in ahk, thus a multiplier has to be used to achieve higher CPS
     CPS := (CPS=0)+Abs(CPS)
     return [Ceil(CPS/limit),(Ceil(CPS/limit)*1000)/CPS] ;https://www.desmos.com/calculator/aefmbh27s4 made by me
@@ -37,3 +41,4 @@ while true {
     customize()
     MsgBox("alt c to use autoclicker`n`npress somewhere else to hide this MsgBox`n`npress retry if you wanna change the autoclicker settings or cancel to exit",,"RetryCancel")="Cancel"? ExitApp():0
 }
+
