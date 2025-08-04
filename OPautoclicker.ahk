@@ -14,7 +14,7 @@ global mt := f(50), mode := true ;mode true = hold, false = toggle
     while(!mode&&GetKeyState("c","P")) {
         Sleep 10
     }
-    ToolTip("autoclicker on" (!mode?"`n`npress alt c to turn off autoclicker":""),A_ScreenWidth*0.1,A_ScreenHeight*0.1)
+    ToolTip("autoclicker on" (!mode?"`n`nhold alt c to turn off autoclicker":""),A_ScreenWidth*0.1,A_ScreenHeight*0.1)
     while((mode&&GetKeyState("c","P"))||(!mode&&!(GetKeyState("c","P")&&GetKeyState('Alt',"P")))) {
         loop mt[1] {
             Click
@@ -36,3 +36,4 @@ while true {
     customize()
     MsgBox("alt c to use autoclicker`n`npress somewhere else to hide this MsgBox`n`npress retry if you wanna change the autoclicker settings or cancel to exit",,"RetryCancel")="Cancel"? ExitApp():0
 }
+
